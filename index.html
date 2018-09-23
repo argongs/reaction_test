@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="text/javascript" href="function.js">
+    <title>Reaction Test</title>
+  </head>
+
+  <body>
+
+  <div class="card text-center">
+    <div class="card-header" >
+      <h3 style="letter-spacing: 4px; ">TEST YOUR SPEED!</h3>
+    </div>
+    <br>
+    <div class="card-deck">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title bg-info" style="letter-spacing: 3px; color:white">OBSERVE THE COLOR</h5>
+          <svg height="400px" width="400px" id="svg_shape">
+            <circle cx="200" cy="200" r="150" fill="red" >
+              <animate id="c1" attributeName="r" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="20" to="150" />
+            </circle>
+            <circle cx="200" cy="200" r="150" fill="yellow" >
+              <animate id="c2" attributeName="r" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="20" to="120" />
+            </circle>
+            <circle cx="200" cy="200" r="150" fill="green" >
+              <animate id="c3" attributeName="r" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="20" to="90" />
+            </circle>
+          </svg>
+          <p class="card-text" id="L_info">Tap the <span class="badge badge-secondary">L</span> Key to initiate the test</p>
+          <a href="#" class="btn btn-warning" onclick="window.location.reload()">Restart Game</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title bg-info" style="letter-spacing: 3px; color:white">How fast are you?</h5>
+          <strong class="card-text bg-warning" id="note">Use the text box below to perform input.</strong>
+          <p class="card-text" id="timer">NOTE : Do not spam the input box!</p>
+          <input type="text" onkeyup="main(event)" style="width:100px; height:50px; font-size:32pt" id="input">
+          <br>
+          <img src="" alt="" id="answer_status" style="width:300px; height:300px; margin:10px">
+          <br>
+          <div class="card-text" id="display_answer" style="color: white; font-weight: bold;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-muted">
+      <h6>
+        HINT : Memorize the location of :
+        <span class="badge badge-secondary">R</span> ,
+        <span class="badge badge-secondary">Y</span> &
+        <span class="badge badge-secondary">G</span>
+      </h6>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="function.js">  </script>
+  </body>
+</html>
