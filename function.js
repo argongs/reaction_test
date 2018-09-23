@@ -31,6 +31,7 @@ function main(event)
       L_hit = 1
       //setTimeout(timer, 1000)
       //setTimeout(timer, 2000)
+      input_char.disabled = true
       setTimeout(combine, 1000)
       L_info.innerHTML = 'Tap the <span class="badge badge-secondary">L</span> Key to go to the next round'
       //svg_content.innerHTML = '<circle cx="200" cy="200" r="150" stroke="black" stroke-width="3" fill="black" />'
@@ -154,8 +155,6 @@ function changeColor()
 
 function timer()
 {
-  input.disabled = true
-
   switch (count_down) {
     case 2: t_notifier.setAttribute("class", "text-danger")
             t_notifier.innerHTML = "Status : Ready... Steady.."
@@ -165,7 +164,8 @@ function timer()
     //        break;
     case 1: t_notifier.setAttribute("class", "text-success")
             t_notifier.innerHTML = "Status : GO!"
-            input.disabled = false
+            input_char.disabled = false
+            input_char.focus()
             break;
   }
   count_down--
