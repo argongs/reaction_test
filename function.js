@@ -8,7 +8,7 @@ var L_info = document.getElementById('L_info')
 input_char.value = ""
 var max_round = 16, round_count = 1, correct_count = 0, resp_time = [], sum_time = 0
 var L_hit = 0
-var count_down = 3, min_time = 0, max_time = 0, avg_time = 0
+var count_down = 1, min_time = 0, max_time = 0, avg_time = 0
 var color_code = 0
 var start = 0, end = 0, time_diff = 0
 
@@ -29,9 +29,9 @@ function main(event)
     {
       note.innerHTML = 'Round '+round_count+' of '+max_round
       L_hit = 1
-      setTimeout(timer, 1000)
-      setTimeout(timer, 2000)
-      setTimeout(combine, 3000)
+      //setTimeout(timer, 1000)
+      //setTimeout(timer, 2000)
+      setTimeout(combine, 1000)
       L_info.innerHTML = 'Tap the <span class="badge badge-secondary">L</span> Key to go to the next round'
       //svg_content.innerHTML = '<circle cx="200" cy="200" r="150" stroke="black" stroke-width="3" fill="black" />'
     }
@@ -132,7 +132,7 @@ function combine()
   /*input.addEventListener('onkeydown', function (e) {
     start = e.timeStamp
   })*/
-  count_down = 3
+  count_down = 1
 }
 
 function changeColor()
@@ -157,12 +157,12 @@ function timer()
   input.disabled = true
 
   switch (count_down) {
-    case 3: t_notifier.setAttribute("class", "text-danger")
-            t_notifier.innerHTML = "Status : Ready.."
+    case 2: t_notifier.setAttribute("class", "text-danger")
+            t_notifier.innerHTML = "Status : Ready... Steady.."
             break;
-    case 2: t_notifier.setAttribute("class", "text-warning")
-            t_notifier.innerHTML = "Status : Steady.."
-            break;
+    //case 2: t_notifier.setAttribute("class", "text-warning")
+    //        t_notifier.innerHTML = "Status : Steady.."
+    //        break;
     case 1: t_notifier.setAttribute("class", "text-success")
             t_notifier.innerHTML = "Status : GO!"
             input.disabled = false
@@ -173,7 +173,7 @@ function timer()
 
 function reset()
 {
-  count_down = 3
+  count_down = 1
   input_char.value = ""
   start = 0
   end = 0
