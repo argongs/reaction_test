@@ -32,7 +32,7 @@ function main(event)
       //setTimeout(timer, 1000)
       //setTimeout(timer, 2000)
       input_char.disabled = true
-      setTimeout(combine, 1000)
+      setTimeout(combine, 10)
       L_info.innerHTML = 'Tap the <span class="badge badge-secondary">L</span> Key to go to the next round'
       //svg_content.innerHTML = '<circle cx="200" cy="200" r="150" stroke="black" stroke-width="3" fill="black" />'
     }
