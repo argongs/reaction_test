@@ -24,6 +24,9 @@
         <div class="card-body">
           <h5 class="card-title bg-info" style="letter-spacing: 3px; color:white">OBSERVE THE COLOR</h5>
           <svg height="400px" width="400px" id="svg_shape">
+            <circle cx="200" cy="200" r="150" fill="blue" >
+              <animate id="c0" attributeName="r" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="20" to="180" />
+            </circle>
             <circle cx="200" cy="200" r="150" fill="red" >
               <animate id="c1" attributeName="r" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="20" to="150" />
             </circle>
@@ -54,6 +57,7 @@
     <div class="card-footer text-muted">
       <h6>
         HINT : Memorize the location of :
+        <span class="badge badge-secondary">B</span> ,
         <span class="badge badge-secondary">R</span> ,
         <span class="badge badge-secondary">Y</span> &
         <span class="badge badge-secondary">G</span>

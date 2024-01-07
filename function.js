@@ -12,6 +12,12 @@ var count_down = 1, min_time = 0, max_time = 0, avg_time = 0
 var color_code = 0
 var start = 0, end = 0, time_diff = 0
 
+var KEY_R = 82
+var KEY_G = 71
+var KEY_Y = 89
+var KEY_B = 66
+var KEY_L = 76
+
 function main(event)
 {
 
@@ -25,7 +31,7 @@ function main(event)
       L_info.innerHTML = 'Tap the <span class="badge badge-secondary">L</span> Key to see your results'
     }
 
-    if (key == 76)
+    if (key == KEY_L)
     {
       note.innerHTML = 'Round '+round_count+' of '+max_round
       L_hit = 1
@@ -36,7 +42,7 @@ function main(event)
       L_info.innerHTML = 'Tap the <span class="badge badge-secondary">L</span> Key to go to the next round'
       //svg_content.innerHTML = '<circle cx="200" cy="200" r="150" stroke="black" stroke-width="3" fill="black" />'
     }
-    else if ((key == 82 || key == 89 || key == 71) && (L_hit ==1))
+    else if ((key == KEY_B || key == KEY_G || key == KEY_R || key == KEY_Y) && (L_hit ==1))
     {
       end = new Date().getTime()
       time_diff = end - start
@@ -76,7 +82,10 @@ function main(event)
   {
     summary()
 
-    svg_content.innerHTML = '<circle cx="200" cy="200" r="150" fill="red" >\
+    svg_content.innerHTML = '<circle cx="200" cy="200" r="150" fill="blue" >\
+                    <animate id="c0" attributeName="r" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="20" to="180" />\
+                  </circle>\
+                  <circle cx="200" cy="200" r="150" fill="red" >\
                     <animate id="c1" attributeName="r" attributeType="XML" begin="0s" dur="2s" fill="freeze" from="20" to="150" />\
                   </circle>\
                   <circle cx="200" cy="200" r="150" fill="yellow" >\
@@ -138,17 +147,20 @@ function combine()
 
 function changeColor()
 {
-  var color = Math.floor((Math.random() * 3) + 1);
+  var color = Math.floor((Math.random() * 4));
   switch (color)
   {
+    case 0: svg_content.innerHTML = '<circle cx="200" cy="200" r="150" stroke="black" stroke-width="3" fill="blue" />'
+            color_code = KEY_B
+            break;
     case 1: svg_content.innerHTML = '<circle cx="200" cy="200" r="150" stroke="black" stroke-width="3" fill="red" />'
-            color_code = 82
+            color_code = KEY_R
             break;
     case 2: svg_content.innerHTML = '<circle cx="200" cy="200" r="150" stroke="black" stroke-width="3" fill="yellow" />'
-            color_code = 89
+            color_code = KEY_Y
             break;
     case 3: svg_content.innerHTML = '<circle cx="200" cy="200" r="150" stroke="black" stroke-width="3" fill="green" />'
-            color_code = 71
+            color_code = KEY_G
             break;
   }
 }
